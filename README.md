@@ -1,24 +1,53 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Postsテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|user|references|foreign_key: true|
+|text|string|null: false|
 
-* Ruby version
+### Association
 
-* System dependencies
+- belongs_to :user
+- has_many :evidences dependent: :destroy
 
-* Configuration
+## Evidencesテーブル
 
-* Database creation
+|Column|Type|Options|
+|------|----|-------|
+|post|references|null: false, foreign_key: true|
+|source|string|null: false|
+|informant|string||
+|source_updated_at|date||
+|level|integer|default: null, limit:1|
+|fact_or_opinion|integer|default: null, limit:1|
+|data_type|integer|default: null, limit:1|
+|reference|text||
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :post
 
-* Services (job queues, cache servers, search engines, etc.)
+## Usersテーブル
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true, index: true|
+|image|string||
 
-* ...
+### Association
+
+- has_one :sns_credential dependent: :destroy
+- has_many :posts dependent: destroy
+
+## SNS_credentialsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user|references|foreign_key: true|
+|uid|string||
+
+### Association
+
+- belongs_to :user optional: true
