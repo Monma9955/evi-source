@@ -5,7 +5,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user|references|foreign_key: true|
-|text|string|null: false|
+|text|text|null: false|
 
 ### Association
 
