@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'evidences/new'
-  get 'evidences/create'
+  root to: 'evidences#new'
+
+  resources :evidences, only: [:create]
 end
