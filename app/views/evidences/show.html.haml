@@ -1,0 +1,19 @@
+.container
+  .header
+    .img-box
+      = image_tag "/assets/png/ebi.png", alt: "エビソースロゴ1"
+    .page-title Evi Source
+    .img-box
+      = image_tag "/assets/png/ebi.png", alt: "エビソースロゴ2"
+  .main
+    投稿内容
+    = @post.text
+    エビデンス
+    - @post.evidences.each do |evidence|
+      = evidence.source
+      = evidence.informant
+      = evidence.source_updated_on
+      = evidence.level
+      = evidence.fact_or_opinion
+      = evidence.data_type
+      = evidence.reference
