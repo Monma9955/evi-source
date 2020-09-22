@@ -1,6 +1,7 @@
 class EvidencesController < ApplicationController
   def new
-    @evidences = Evidence.new
+    @post = Post.new
+    @post.evidences.build
   end
 
   def create
