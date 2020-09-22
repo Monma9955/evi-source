@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root to: 'evidences#new'
 
-  resources :evidences, only: [:create]
+  resources :evidences, only: [:create, :show]
 end
