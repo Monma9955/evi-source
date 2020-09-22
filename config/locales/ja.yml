@@ -3,6 +3,15 @@ ja:
   activemodel:
     models:
   activerecord:
+    attributes:
+      evidence:
+        source: "根拠・情報源(URLや考察等)　※必須"
+        informant: "情報提供元(記者名・団体名)"
+        source_updated_on: "情報の最終更新日時"
+        level: "情報レベル"
+        fact_or_opinion: "事実か私見か"
+        data_type: "情報の種類"
+        reference: "備考"
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -214,15 +223,18 @@ ja:
         delimiter: ''
   simple_form:
     labels:
-      evidence:
+      # evidence:
+      #   new:
+      #     source: "根拠・情報源(URLや考察等)"
+      #     informant: "情報提供元(記者名・団体名)"
+      #     source_updated_on: "情報の最終更新日時"
+      #     level: "情報レベル"
+      #     fact_or_opinion: "事実か私見か"
+      #     data_type: "情報の種類"
+      #     reference: "備考"
+      post:
         new:
-          source: "根拠・情報源(URLや考察等)"
-          informant: "情報提供元(記者名・団体名)"
-          source_updated_on: "情報の最終更新日時"
-          level: "情報レベル"
-          fact_or_opinion: "事実か私見か"
-          data_type: "情報の種類"
-          reference: "備考"
+          text: "投稿内容　※必須"
   support:
     array:
       last_word_connector: "、"
