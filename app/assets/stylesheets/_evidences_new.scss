@@ -1,0 +1,78 @@
+body {
+  background-color: #f2f39c;
+}
+.container {
+  margin: 0 auto;
+  max-width: 640px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  .header {
+    height: 100px;
+    background-color: #24e724;
+    display: flex;
+    justify-content: center;
+    .img-box {
+      flex-basis: 75px;
+      img {
+        margin: 10px auto 0;
+        width: 64px;
+      }
+    }
+    .page-title {
+      font-family: 'Vidaloka', serif;
+      color:#444;
+      font-size:63px;
+      text-shadow:3px 3px 6px #888;
+    }
+  }
+
+  .main {
+    margin-top: 15px;
+    padding: 0 25px;
+    .simple_form {
+      .input.optional {
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        label.optional {
+          width: 100%;
+        }
+        input.optional {
+          width: 100%;
+          height: 30px;
+          padding: 0 6px;
+        }
+        textarea.optional {
+          width: 100%;
+          padding: 0 6px;
+        }
+        select.date {
+          width: calc(100% / 3);
+          height: 30px;
+          padding: 0 6px;
+        }
+      }
+      .form-container {
+        display: flex;
+        .input.enum.optional {
+          width: 50%;
+          label.enum {
+            width: 100%;
+          }
+          select.enum {
+            width: 75%;
+            height: 30px;
+            padding: 0 6px;
+          }
+        }
+      }
+      #addDataType {
+        select.enum {
+          width: 37.5%;
+          height: 30px;
+          padding: 0 6px;
+        }
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user|references|foreign_key: true|
-|text|string|null: false|
+|text|text|null: false|
 
 ### Association
 
@@ -19,7 +19,7 @@
 |post|references|null: false, foreign_key: true|
 |source|string|null: false|
 |informant|string||
-|source_updated_at|date||
+|source_updated_on|date||
 |level|integer|default: null, limit:1|
 |fact_or_opinion|integer|default: null, limit:1|
 |data_type|integer|default: null, limit:1|

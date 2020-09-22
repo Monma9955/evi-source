@@ -58,7 +58,9 @@ group :test do
   gem 'webdrivers', '~> 4.0'
 end
 
+gem "enum_help"
 gem "factory_bot_rails"
 gem "haml-rails"
 gem "pry-rails"
 gem "rspec-rails"
+gem "simple_form"
