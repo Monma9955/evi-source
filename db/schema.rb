@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_22_060829) do
+ActiveRecord::Schema.define(version: 2020_09_22_064224) do
 
   create_table "evidences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "post", null: false
+    t.string "source", null: false
+    t.string "informant"
+    t.date "source_updated_on"
+    t.integer "level", limit: 1
+    t.integer "fact_or_opinion", limit: 1
+    t.integer "data_type", limit: 1
+    t.text "reference"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
