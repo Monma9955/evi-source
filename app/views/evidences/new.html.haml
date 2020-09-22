@@ -6,15 +6,18 @@
     .img-box
       = image_tag "/assets/png/ebi.png", alt: "エビソースロゴ2"
   .main
-    = simple_form_for @evidences do |f|
-      = f.input :source, placeholder: "例 https://..."
-      = f.input :informant, placeholder: "経済産業省"
-      = f.input :source_updated_on, start_year: 1900, end_year: Date.current.year
-      .form-container
-        = f.input :level
-        = f.input :fact_or_opinion
-      -# fact_or_opinionが選択されたら表示
-      #addDataType
-        = f.input :data_type
-      = f.input :reference, placeholder: "詳細は「持続化給付金に関するお知らせ」 「制度の概要」欄をご一読ください。"
+    = simple_form_for @post, url: { controller: 'evidences', action: 'create' }, local: true do |f|
+      = f.input :text
+
+      = f.fields_for :evidences do |evidence|
+        = evidence.input :source, placeholder: "例 https://..."
+        = evidence.input :informant, placeholder: "例 経済産業省"
+        = evidence.input :source_updated_on, start_year: 1900, end_year: Date.current.year
+        .form-container
+          = evidence.input :level
+          = evidence.input :fact_or_opinion
+        -# fact_or_opinionを選択したら表示させる
+        #addDataType
+          = evidence.input :data_type
+        = evidence.input :reference, placeholder: "詳細は「持続化給付金に関するお知らせ」 「制度の概要」欄をご一読ください。"
       = f.button :submit
