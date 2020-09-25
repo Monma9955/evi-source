@@ -60,6 +60,7 @@ end
 
 gem "enum_help"
 gem "factory_bot_rails"
+gem "font-awesome-sass"
 gem "haml-rails"
 gem "pry-rails"
 gem "rspec-rails"
