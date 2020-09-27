@@ -6,14 +6,46 @@
     .img-box
       = image_tag "/assets/png/ebi.png", alt: "エビソースロゴ2"
   .main
-    投稿内容
-    = @post.text
-    エビデンス
-    - @post.evidences.each do |evidence|
-      = evidence.source
-      = evidence.informant
-      = evidence.source_updated_on
-      = evidence.level
-      = evidence.fact_or_opinion
-      = evidence.data_type
-      = evidence.reference
+    .post
+      投稿内容：
+      .evidence-scope
+        = @post.text
+    .evidences
+      - @post.evidences.each do | evidence |
+        .evidences__evidence
+          = icon('fas', 'caret-square-down')
+          エビデンス
+          = evidence.source
+        %table.evidence-info
+          %tr.evidence-info__row
+            %td.evidence-info__row__title
+              情報提供元
+            %td.evidence-info__row__data
+              = evidence.informant
+          %tr.evidence-info__row
+            %td.evidence-info__row__title
+              情報更新日
+            %td.evidence-info__row__data
+              = l(evidence.source_updated_on, formats: :default)
+          %tr.evidence-info__row
+            %td.evidence-info__row__title
+              情報レベル
+            %td.evidence-info__row__data
+              = evidence.level_i18n
+          %tr.evidence-info__row
+            %td.evidence-info__row__title
+              私見か事実か
+            %td.evidence-info__row__data
+              = evidence.fact_or_opinion_i18n
+          %tr.evidence-info__row
+            %td.evidence-info__row__title
+              データタイプ
+            %td.evidence-info__row__data
+              = evidence.data_type_i18n
+          %tr.evidence-info__row
+            %td.evidence-info__row__title
+              備考
+            %td.evidence-info__row__data
+              = evidence.reference
+    .link-btn-box
+      = link_to "新しいエビデンスを作成する", root_path, class: 'evidence-new-btn'
