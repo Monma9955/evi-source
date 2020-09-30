@@ -1,10 +1,5 @@
 .container
-  = link_to root_path, class: 'header' do
-    .img-box
-      = image_tag "/assets/png/ebi.png", alt: "エビソースロゴ1"
-    .page-title Evi Source
-    .img-box
-      = image_tag "/assets/png/ebi.png", alt: "エビソースロゴ2"
+  = render 'header'
   .main
     .post
       投稿内容：
