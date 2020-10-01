@@ -6,27 +6,6 @@ body {
   max-width: 640px;
   min-height: 100vh;
   background-color: #ffffff;
-  .header {
-    height: 100px;
-    background-color: #24e724;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    .img-box {
-      flex-basis: 75px;
-      img {
-        margin: 10px auto 0;
-        width: 64px;
-      }
-    }
-    .page-title {
-      font-family: 'Vidaloka', serif;
-      color:#444;
-      font-size:63px;
-      text-shadow:3px 3px 6px #888;
-    }
-  }
-
   .main {
     margin-top: 15px;
     padding: 0 25px;
