@@ -2,6 +2,7 @@
   = render 'header'
   .main
     = simple_form_for @post, url: { controller: 'evidences', action: 'create' }, local: true do |f|
+      = render 'error_messages', model: f.object
       = f.input :text, placeholder: "例) 農業、漁業、製造業、飲食業、小売業、作家・俳優業など幅広い業種で、法人・個人の方が対象"
 
       = f.fields_for :evidences do |evidence|
