@@ -10,19 +10,19 @@ body {
     margin-top: 15px;
     padding: 0 25px;
     .simple_form {
-      .input.optional {
+      .input {
         margin-bottom: 10px;
         display: flex;
         flex-wrap: wrap;
-        label.optional {
+        label {
           width: 100%;
         }
-        input.optional {
+        input {
           width: 100%;
           height: 30px;
           padding: 0 6px;
         }
-        textarea.optional {
+        textarea {
           width: 100%;
           padding: 0 6px;
         }
@@ -55,4 +55,8 @@ body {
       }
     }
   }
+}
+
+abbr[title="required"] {
+  display: none;
 }
