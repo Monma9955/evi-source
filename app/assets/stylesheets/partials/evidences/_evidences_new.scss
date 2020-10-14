@@ -8,7 +8,7 @@ body {
   background-color: #ffffff;
   .main {
     margin-top: 15px;
-    padding: 0 25px;
+    padding: 0 25px 15px;
     .simple_form {
       .input {
         margin-bottom: 10px;
@@ -53,6 +53,24 @@ body {
           padding: 0 6px;
         }
       }
+    }
+    .btn {
+      position: relative;
+      display: inline-block;
+      margin-top: 5px;
+      padding: 3px 18px;
+      background-color: #fff;
+      font-size: 18px;
+      color: #00b5ad;
+      text-decoration: none;
+      user-select: none;
+      border: 1px #00b5ad solid;
+      box-shadow: inset #00b5ad 0 0 0 0;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      color: #fff;
+      box-shadow: inset #00b5ad 0 0 0 2em;
     }
   }
 }
