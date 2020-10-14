@@ -1,0 +1,45 @@
+ja:
+  activerecord:
+    models:
+      post: "投稿内容"
+      evidence: "情報元"
+    attributes:
+      post:
+        text: "投稿内容"
+      # fields_forフォームの項目名の日本語化
+      evidence:
+        source: "根拠・情報源(URLや考察等)　※必須"
+        informant: "情報提供元(記者名・団体名)"
+        source_updated_on: "情報の最終更新日時"
+        level: "情報レベル"
+        fact_or_opinion: "事実か私見か"
+        data_type: "情報の種類"
+        reference: "備考"
+      evidences:
+        source: "根拠・情報源"
+        informant: "情報提供元(記者名・団体名)"
+        source_updated_on: "情報の最終更新日時"
+        level: "情報レベル"
+        fact_or_opinion: "事実か私見か"
+        data_type: "情報の種類"
+        reference: "備考"
+    errors:
+      messages:
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+  enums:
+    evidence:
+      level:
+        primary: "一次情報"
+        secondary: "二次情報"
+        tertiary: "三次情報"
+      fact_or_opinion:
+        fact: "事実"
+        opinion: "私見"
+        both: "両方"
+      data_type:
+        verification: "検証"
+        statistical: "統計"
+        questionary: "アンケート"

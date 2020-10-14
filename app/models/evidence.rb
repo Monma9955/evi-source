@@ -7,4 +7,12 @@ class Evidence < ApplicationRecord
   # fact = 事実 opinion = 私見 both = どちらも
   enum data_type:{ verification:0, statistical:1, questionary:2 }
   # verification = 検証(結果) statistical = 統計(結果) questionary = アンケート(結果)
+
+  validates :source, presence: true
+  validate  :updated_date_before_today?
+
+  def updated_date_before_today?
+    errors.add(:source_updated_on, "は今日以前の日付を選択してください") if source_updated_on.present? && source_updated_on > Date.today
+  end
+
 end
