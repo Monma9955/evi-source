@@ -67,10 +67,12 @@ group :test do
   gem 'webdrivers', '~> 4.0'
 end
 
+gem "cocoon"
 gem "enum_help"
 gem "factory_bot_rails"
 gem "font-awesome-sass"
 gem "haml-rails"
+gem "jquery-rails"
 gem "pry-rails"
 gem "rspec-rails"
 gem "simple_form"
