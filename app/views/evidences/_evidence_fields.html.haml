@@ -1,0 +1,13 @@
+-# cocoonGem指定の部分テンプレート部分
+.nested-fields
+  = f.input :source, error: false, placeholder: "例) https://..."
+  = f.input :informant, error: false, placeholder: "例) 経済産業省"
+  = f.input :source_updated_on, error: false, start_year: 1900, end_year: Date.current.year
+  .form-container
+    = f.input :level, error: false
+    = f.input :fact_or_opinion, error: false
+  -# fact_or_opinionを選択したら表示させる
+  #addDataType
+    = f.input :data_type, error: false
+  = f.input :reference, error: false, placeholder: "例) 詳細は「持続化給付金に関するお知らせ」 「制度の概要」欄をご一読ください。"
+  = link_to_remove_association '削除', f
