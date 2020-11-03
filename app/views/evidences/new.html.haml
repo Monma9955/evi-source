@@ -3,10 +3,12 @@
   .main
     = simple_form_for @post, url: { controller: 'evidences', action: 'create' }, local: true do |f|
       = render 'error_messages', model: f.object
-      = f.input :text, error: false, placeholder: "例) 農業、漁業、製造業、飲食業、小売業、作家・俳優業など幅広い業種で、法人・個人の方が対象"
+      = f.input :text, error: false, placeholder: "例) 持続化給付金は農業、漁業、製造業、飲食業、小売業、作家・俳優業など幅広い業種で、法人・個人の方が対象"
 
       = f.fields_for :evidences do |evidence|
         = render 'evidence_fields', f: evidence
         .links
-          = link_to_add_association "＋次のエビデンスを追加", f, :evidences
+          = link_to_add_association f, :evidences do
+            = icon('fas', 'plus-square')
+            %span 次の情報源を追加
       = f.button :submit, "投稿する"
