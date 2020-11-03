@@ -1,0 +1,59 @@
+// evidences_new.html.hamlのsimple_form内evidenceテーブル関連のscss
+.nested-fields {
+  padding: 10px 25px 15px;
+  border-bottom: 1px #48485273 solid;
+  .input {
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    label {
+      width: 100%;
+    }
+    input {
+      width: 100%;
+      height: 30px;
+      padding: 0 6px;
+    }
+    textarea {
+      width: 100%;
+      padding: 0 6px;
+    }
+    select.date {
+      width: calc(100% / 3);
+      height: 30px;
+      padding: 0 6px;
+    }
+  }
+  .form-container {
+    display: flex;
+    .input.enum.optional {
+      width: 50%;
+      label.enum {
+        width: 100%;
+      }
+      select.enum {
+        width: 75%;
+        height: 30px;
+        padding: 0 6px;
+      }
+    }
+  }
+  #addDataType {
+    select.enum {
+      width: 37.5%;
+      height: 30px;
+      padding: 0 6px;
+    }
+  }
+  .remove {
+    text-align: right;
+    .remove_fields {
+      font-size: 15px;
+      color: #f77575;
+      text-decoration: none;
+    }
+    .remove_fields:hover {
+      opacity: 0.6;
+    }
+  }
+}
