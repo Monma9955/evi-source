@@ -3,17 +3,12 @@
   .main
     = simple_form_for @post, url: { controller: 'evidences', action: 'create' }, local: true do |f|
       = render 'error_messages', model: f.object
-      = f.input :text, error: false, placeholder: "例) 農業、漁業、製造業、飲食業、小売業、作家・俳優業など幅広い業種で、法人・個人の方が対象"
+      = f.input :text, error: false, placeholder: "例) 持続化給付金は農業、漁業、製造業、飲食業、小売業、作家・俳優業など幅広い業種で、法人・個人の方が対象"
 
       = f.fields_for :evidences do |evidence|
-        = evidence.input :source, error: false, placeholder: "例) https://..."
-        = evidence.input :informant, error: false, placeholder: "例) 経済産業省"
-        = evidence.input :source_updated_on, error: false, start_year: 1900, end_year: Date.current.year
-        .form-container
-          = evidence.input :level, error: false
-          = evidence.input :fact_or_opinion, error: false
-        -# fact_or_opinionを選択したら表示させる
-        #addDataType
-          = evidence.input :data_type, error: false
-        = evidence.input :reference, error: false, placeholder: "例) 詳細は「持続化給付金に関するお知らせ」 「制度の概要」欄をご一読ください。"
+        = render 'evidence_fields', f: evidence
+        .links
+          = link_to_add_association f, :evidences do
+            = icon('fas', 'plus-square')
+            %span 次の情報源を追加
       = f.button :submit, "投稿する"
