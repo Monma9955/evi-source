@@ -13,7 +13,7 @@ feature 'evidences', type: :feature do
     expect(page).to have_content "情報レベル"
     expect(page).to have_content "情報の種類"
     expect(page).to have_content "備考"
-    expect(page).to have_button "登録する"
+    expect(page).to have_button "投稿する"
 
     # post・evidenceの投稿で各テーブルにレコードが増えている
     expect {
@@ -27,7 +27,7 @@ feature 'evidences', type: :feature do
       select "事実", from: '事実か私見か'
       select "統計", from: '情報の種類'
       fill_in "備考", with: "ああ"
-      click_button '登録する'
+      click_button '投稿する'
     }.to change(Post, :count).by(1) & change(Evidence, :count).by(1)
   end
 
