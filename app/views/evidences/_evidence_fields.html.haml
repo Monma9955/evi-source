@@ -11,6 +11,6 @@
     = f.input :data_type, error: false
   = f.input :reference, error: false, placeholder: "例) 詳細は「持続化給付金に関するお知らせ」 「制度の概要」欄をご一読ください。"
   .remove
-    = link_to_remove_association f do
+    = link_to_remove_association f, id: 'remove-btn' do
       %span この情報源を削除
       = icon('fas', 'bomb')
