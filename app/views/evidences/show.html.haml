@@ -42,5 +42,8 @@
               備考
             %td.evidence-info__row__data
               = evidence.reference
+    .share
+      = link_to "https://twitter.com/share?url=#{ request.url }&text=#{ @post.text } ／ 情報元はこちら", class: 'twitter-share-button', 'data-lang': "ja", 'data-size': "large", 'data-hashtags': "EviSource", target: '_blank' do
+        %script{ async: "", src: "https://platform.twitter.com/widgets.js", charset: "utf-8" }
     .link-btn-box
       = link_to "新しいエビデンスを作成する", root_path, class: 'evidence-new-btn'
