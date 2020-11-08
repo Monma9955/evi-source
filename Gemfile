@@ -68,6 +68,7 @@ group :test do
 end
 
 gem "cocoon"
+gem "dotenv-rails"
 gem "enum_help"
 gem "factory_bot_rails"
 gem "font-awesome-sass"
