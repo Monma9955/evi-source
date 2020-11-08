@@ -10,7 +10,7 @@
         .evidences__heading
           = icon('fas', 'caret-square-down')
           エビデンス
-          - if URI.regexp.match(evidence.source).nil?
+          - if URI::DEFAULT_PARSER.make_regexp.match(evidence.source).nil?
             = evidence.source
           - else
             = link_to "#{ evidence.source }", "#{ evidence.source }", target: '_blank'
