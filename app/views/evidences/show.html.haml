@@ -10,7 +10,10 @@
         .evidences__evidence
           = icon('fas', 'caret-square-down')
           エビデンス
-          = evidence.source
+          - if URI.regexp.match(evidence.source).nil?
+            = evidence.source
+          - else
+            = link_to "#{ evidence.source }", "#{ evidence.source }", target: '_blank'
         %table.evidence-info
           %tr.evidence-info__row
             %td.evidence-info__row__title
