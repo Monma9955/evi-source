@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_22_180447) do
+ActiveRecord::Schema.define(version: 2020_11_09_165524) do
 
   create_table "evidences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -32,5 +32,14 @@ ActiveRecord::Schema.define(version: 2020_09_22_180447) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "short_urls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "evidence_id", null: false
+    t.string "url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["evidence_id"], name: "index_short_urls_on_evidence_id"
+  end
+
   add_foreign_key "evidences", "posts"
+  add_foreign_key "short_urls", "evidences"
 end
