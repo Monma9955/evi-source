@@ -43,7 +43,7 @@ TwitterAPI(未実装)
 
 ## DB設計
 
-### Postsテーブル
+### postsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -52,10 +52,10 @@ TwitterAPI(未実装)
 
 #### Association
 
-- belongs_to :user
-- has_many :evidences dependent: :destroy
+* belongs_to :user
+* has_many :evidences dependent: :destroy
 
-### Evidencesテーブル
+### evidencesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -70,9 +70,21 @@ TwitterAPI(未実装)
 
 #### Association
 
-- belongs_to :post
+* belongs_to :post
+* has_one :short_url
 
-### Usersテーブル
+### short_urlsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|evidence|references|null: false, foreign_key: true|
+|url|string|null: false|
+
+#### Association
+
+* belongs_to :evidence
+
+### usersテーブル(未実装)
 
 |Column|Type|Options|
 |------|----|-------|
@@ -81,10 +93,10 @@ TwitterAPI(未実装)
 
 #### Association
 
-- has_one :sns_credential dependent: :destroy
-- has_many :posts dependent: destroy
+* has_one :sns_credential dependent: :destroy
+* has_many :posts dependent: destroy
 
-### SNS_credentialsテーブル
+### sns_credentialsテーブル(未実装)
 
 |Column|Type|Options|
 |------|----|-------|
@@ -93,4 +105,4 @@ TwitterAPI(未実装)
 
 #### Association
 
-- belongs_to :user optional: true
+* belongs_to :user optional: true
