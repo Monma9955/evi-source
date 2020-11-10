@@ -15,7 +15,7 @@ $(document).on('turbolinks:load', function() {
   $(function(){
     // evidences一覧のアコーディオンメニュー表示・非表示イベント
     $('.evidence-info').hide();
-    $('.evidences__evidence').click(function(){
+    $('.evidences__heading').click(function(){
       $(this).next('.evidence-info').slideToggle();
     });
   });

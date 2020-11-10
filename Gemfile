@@ -67,7 +67,9 @@ group :test do
   gem 'webdrivers', '~> 4.0'
 end
 
+gem "bitly"
 gem "cocoon"
+gem "dotenv-rails"
 gem "enum_help"
 gem "factory_bot_rails"
 gem "font-awesome-sass"

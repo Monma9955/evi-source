@@ -7,10 +7,13 @@
         = @post.text
     .evidences
       - @post.evidences.each do | evidence |
-        .evidences__evidence
+        .evidences__heading
           = icon('fas', 'caret-square-down')
           エビデンス
-          = evidence.source
+          - if URI::DEFAULT_PARSER.make_regexp.match(evidence.source).nil?
+            = evidence.source
+          - else
+            = link_to "#{ evidence.short_url.url }", "#{ evidence.short_url.url }", target: '_blank'
         %table.evidence-info
           %tr.evidence-info__row
             %td.evidence-info__row__title
