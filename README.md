@@ -27,19 +27,22 @@ Twitterやその他SNS等では偽・誤情報が広まることも多く、コ�
 
 ## 開発環境
 
-Ruby 2.5.1
-Rails 5.2.4
-html/css(それぞれhaml/scssを使用)
-JavaScript(jQuery)
-RSpec(テスト環境)
-MySQL(データベース)
-TwitterAPI(未実装)
+* Ruby 2.5.1
+* Rails 5.2.4
+* html/css(それぞれhaml/scssを使用)
+* JavaScript(jQuery)
+* RSpec(テスト)
+* MySQL(開発/本番環境)
+* GitHub(リポジトリ管理)
+* AWS EC2(インフラ)
 
 ## 今後実装したい機能
 
 * ユーザーサインイン機能
 
 * エビデンスの編集機能
+
+* CIツールの導入
 
 ## DB設計
 
