@@ -8,6 +8,17 @@ class EvidencesController < ApplicationController
     @post = Post.new(evidence_params)
     if @post.save
       redirect_to evidence_path(@post.id)
+      # sourceがURLのevidenceレコードは短縮URLをShort_urlsテーブルに保存
+      @post.evidences.each do | evidence |
+        if URI::DEFAULT_PARSER.make_regexp.match(evidence.source).nil?
+        else
+          client = Bitly::API::Client.new(token: ENV['BITLY_TOKEN'])
+          shorturl = client.shorten(long_url: evidence.source)
+          @short_url = ShortUrl.new({evidence_id: evidence.id,
+                                      url: shorturl.link})
+          @short_url.save
+        end
+      end
     else
       render :new
     end
