@@ -71,7 +71,7 @@ TwitterAPI(未実装)
 #### Association
 
 * belongs_to :post
-* has_one :short_url
+* has_one :short_url dependent: :destroy
 
 ### short_urlsテーブル
 

@@ -1,5 +1,6 @@
 class Evidence < ApplicationRecord
   belongs_to :post
+  has_one :short_url, dependent: :destroy
 
   enum level:{ primary: 0, secondary: 1, tertiary: 2 }
   # primary = 一次情報 secondary = 二次情報 tertiary = 三次情報
