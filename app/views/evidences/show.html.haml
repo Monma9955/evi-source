@@ -12,8 +12,8 @@
           エビデンス
           - if evidence.short_url.count > 1
             = link_to "#{ evidence.short_url.url }", "#{ evidence.short_url.url }", target: '_blank'
-          -# 何らかの理由で短縮URLが作成できなかった場合は元のURLを表示させる
-          - elsif evidence.it_is_url
+          - elsif evidence.it_is_url?
+            -# 何らかの理由で短縮URLが作成できなかった場合は元のURLを表示させる
             = link_to "#{ evidence.source }", "#{ evidence.source }", target: '_blank'
           - else
             = evidence.source

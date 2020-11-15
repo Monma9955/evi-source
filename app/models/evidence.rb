@@ -19,7 +19,7 @@ class Evidence < ApplicationRecord
     errors.add(:source_updated_on, "は今日以前の日付を選択してください") if source_updated_on.present? && source_updated_on > Date.today
   end
 
-  def it_is_url
+  def it_is_url?
     URI::DEFAULT_PARSER.make_regexp.match(self.source).nil? ? FALSE : TRUE
   end
 
@@ -34,7 +34,7 @@ class Evidence < ApplicationRecord
 
   def shorten_url_create
     # self.sourceがURLの場合はTRUE
-    if self.it_is_url
+    if self.it_is_url?
       @short_url = ShortUrl.new({evidence_id: self.id,
                                   url: convert_long_url(self.source)})
       false unless @short_url.save
