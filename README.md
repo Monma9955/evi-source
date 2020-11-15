@@ -63,7 +63,7 @@ Twitterやその他SNS等では偽・誤情報が広まることも多く、コ�
 |Column|Type|Options|
 |------|----|-------|
 |post|references|null: false, foreign_key: true|
-|source|string|null: false|
+|source|text|null: false|
 |informant|string||
 |source_updated_on|date||
 |level|integer|default: null, limit:1|

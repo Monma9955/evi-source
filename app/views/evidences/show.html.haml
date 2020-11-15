@@ -10,10 +10,13 @@
         .evidences__heading
           = icon('fas', 'caret-square-down')
           エビデンス
-          - if URI::DEFAULT_PARSER.make_regexp.match(evidence.source).nil?
-            = evidence.source
-          - else
+          - if evidence.short_url.present?
             = link_to "#{ evidence.short_url.url }", "#{ evidence.short_url.url }", target: '_blank'
+          - elsif evidence.it_is_url?
+            -# 何らかの理由で短縮URLが作成できなかった場合は元のURLを表示させる
+            = link_to "#{ evidence.source }", "#{ evidence.source }", target: '_blank'
+          - else
+            = evidence.source
         %table.evidence-info
           %tr.evidence-info__row
             %td.evidence-info__row__title
