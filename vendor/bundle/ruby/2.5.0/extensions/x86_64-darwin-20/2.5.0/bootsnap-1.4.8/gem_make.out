@@ -1,0 +1,15 @@
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.8/ext/bootsnap
+/Users/mon/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20201201-62135-1qvq1ny.rb extconf.rb
+creating Makefile
+
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.8/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.8/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.8/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20201201-62135-h2rwyc/bootsnap
