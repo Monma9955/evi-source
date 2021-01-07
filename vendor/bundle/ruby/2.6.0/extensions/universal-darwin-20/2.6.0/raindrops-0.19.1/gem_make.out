@@ -1,0 +1,35 @@
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.6.0/gems/raindrops-0.19.1/ext/raindrops
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20210106-53029-i9ty16.rb extconf.rb
+checking for mmap() in sys/mman.h... yes
+checking for munmap() in sys/mman.h... yes
+checking for mremap() in sys/mman.h... no
+checking for linux/tcp.h... no
+checking for netinet/tcp.h... yes
+checking for netinet/tcp_fsm.h... yes
+checking for struct tcp_info in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,netinet/tcp.h,netinet/tcp_fsm.h... no
+checking for getpagesize() in unistd.h... yes
+checking for rb_thread_call_without_gvl()... yes
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_io_blocking_region()... yes
+checking for GCC 4+ atomic builtins... yes
+creating extconf.h
+creating Makefile
+
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.6.0/gems/raindrops-0.19.1/ext/raindrops
+make "DESTDIR=" clean
+
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.6.0/gems/raindrops-0.19.1/ext/raindrops
+make "DESTDIR="
+compiling linux_inet_diag.c
+compiling raindrops.c
+compiling tcp_info.c
+linking shared-object raindrops_ext.bundle
+ld: warning: directory not found for option '-L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.Internal.sdk/usr/local/lib'
+ld: warning: directory not found for option '-L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.Internal.sdk/usr/local/lib'
+ld: warning: ignoring file linux_inet_diag.o, building for macOS-arm64e but attempting to link with file built for unknown-x86_64
+ld: warning: ignoring file raindrops.o, building for macOS-arm64e but attempting to link with file built for unknown-x86_64
+ld: warning: ignoring file tcp_info.o, building for macOS-arm64e but attempting to link with file built for unknown-x86_64
+
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.6.0/gems/raindrops-0.19.1/ext/raindrops
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 raindrops_ext.bundle ./.gem.20210106-53029-1dfg20w

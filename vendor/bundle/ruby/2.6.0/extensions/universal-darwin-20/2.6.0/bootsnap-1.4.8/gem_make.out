@@ -1,0 +1,18 @@
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.8/ext/bootsnap
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20210106-53029-1itd95j.rb extconf.rb
+creating Makefile
+
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.8/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.8/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+ld: warning: directory not found for option '-L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.Internal.sdk/usr/local/lib'
+ld: warning: directory not found for option '-L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.Internal.sdk/usr/local/lib'
+ld: warning: ignoring file bootsnap.o, building for macOS-arm64e but attempting to link with file built for unknown-x86_64
+
+current directory: /Users/mon/projects/evi-source_project/evi-source/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.8/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210106-53029-1f2uwze/bootsnap
