@@ -59,7 +59,7 @@ describe Evidence do
       it "source_updated_onが明日(未来)の日付だと登録ができないこと" do
         evidence = build(:evidence, source_updated_on: Date.tomorrow)
         evidence.valid?
-        expect(evidence.errors{:source_updated_on}).to include()
+        expect(evidence.errors {:source_updated_on}).to include()
       end
     end
   end
