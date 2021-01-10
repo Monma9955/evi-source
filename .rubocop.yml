@@ -20,6 +20,7 @@ AllCops:
     - 'actionmailbox/test/dummy/**/*'
     - 'actiontext/test/dummy/**/*'
     - '**/node_modules/**/*'
+  NewCops: enable
 
 ## 日本語コメントを許可します。
 Style/AsciiComments:
