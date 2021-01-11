@@ -35,8 +35,8 @@ class Evidence < ApplicationRecord
   def shorten_url_create
     # self.sourceがURLの場合はTRUE
     if self.it_is_url?
-      @short_url = ShortUrl.new({evidence_id: self.id,
-                                  url: convert_long_url(self.source)})
+      @short_url = ShortUrl.new({ evidence_id: self.id,
+                                  url: convert_long_url(self.source) })
       false unless @short_url.save
     end
   end

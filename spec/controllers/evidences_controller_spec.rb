@@ -17,18 +17,18 @@ describe EvidencesController do
 
   describe 'POST #create' do
     context '投稿に成功した場合' do
-      before do
-        @evidences_params = { evidences_attributes: { "0": attributes_for(:evidence) } }
-        @params_nested = { post: attributes_for(:post).merge(@evidences_params) }
-      end
-
       subject {
           post :create,
           params: @params_nested
         }
 
+      before do
+        @evidences_params = { evidences_attributes: { "0": attributes_for(:evidence) } }
+        @params_nested = { post: attributes_for(:post).merge(@evidences_params) }
+      end
+
       it "postとevidenceを保存すること" do
-        expect{ subject }.to change(Post, :count).by(1).and change(Evidence, :count).by(1)
+        expect { subject }.to change(Post, :count).by(1).and change(Evidence, :count).by(1)
       end
 
       it "show.html.hamlに遷移すること" do
@@ -38,21 +38,21 @@ describe EvidencesController do
     end
 
     context '投稿に失敗した場合' do
-      let(:invalid_params) { { post: attributes_for(:post, text: nil),
-                              evidences_attributes: evidence_params } }
-      let(:evidence_params) { { "0": attributes_for(:evidence, source: nil) } }
-
       subject {
         post :create,
         params: invalid_params
       }
 
+      let(:invalid_params) { { post: attributes_for(:post, text: nil),
+                              evidences_attributes: evidence_params } }
+      let(:evidence_params) { { "0": attributes_for(:evidence, source: nil) } }
+
       it "Postを保存しないこと" do
-        expect{ subject }.not_to change(Post, :count)
+        expect { subject }.not_to change(Post, :count)
       end
 
       it "Evidenceを保存しないこと" do
-        expect{ subject }.not_to change(Evidence, :count)
+        expect { subject }.not_to change(Evidence, :count)
       end
 
       it "new.html.hamlに遷移すること" do

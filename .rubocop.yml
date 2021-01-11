@@ -1,0 +1,42 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-rubycw
+
+## 全体に適応する項目を定義します。ここで Exclude に設定したファイルは、チェック対象外になります。
+## 今回の設定は右のサイトを参考にしました https://hoshinotsuyoshi.com/post/rubocop_yaml/
+AllCops:
+  DisabledByDefault: true
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'lib/tasks/auto_annotate_models.rake'
+    - '**/tmp/**/*'
+    - '**/templates/**/*'
+    - '**/vendor/**/*'
+    - 'actionpack/lib/action_dispatch/journey/parser.rb'
+    - 'actionmailbox/test/dummy/**/*'
+    - 'actiontext/test/dummy/**/*'
+    - '**/node_modules/**/*'
+  NewCops: enable
+
+Bundler:
+  Enabled: true
+
+Gemspec:
+  Enabled: true
+
+Lint:
+  Enabled: true
+
+Performance:
+  Enabled: true
+
+Rubycw:
+  Enabled: true
+
+Security:
+  Enabled: true
