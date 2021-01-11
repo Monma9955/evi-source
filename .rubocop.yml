@@ -1,9 +1,10 @@
 inherit_from: .rubocop_todo.yml
 
 require:
+  - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
-  - rubocop-performance
+  - rubocop-rubycw
 
 ## 全体に適応する項目を定義します。ここで Exclude に設定したファイルは、チェック対象外になります。
 ## 今回の設定は右のサイトを参考にしました https://hoshinotsuyoshi.com/post/rubocop_yaml/
@@ -34,8 +35,8 @@ Lint:
 Performance:
   Enabled: true
 
-# Rubycw:
-#   Enabled: true
+Rubycw:
+  Enabled: true
 
 Security:
   Enabled: true
