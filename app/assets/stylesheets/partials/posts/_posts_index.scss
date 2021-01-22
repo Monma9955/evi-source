@@ -19,7 +19,7 @@
 .info-box {
   padding: 12px 0 5px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 14px;
   &__user {
     color: #222;
@@ -32,7 +32,7 @@
 }
 
 .post-text {
-  padding: 0 5px 12px;
+  padding-bottom: 12px;
   font-size: 20pt;
   color: #222;
   text-decoration: none;
