@@ -1,0 +1,7 @@
+// カラーパレットの定義
+$palette-trueWhite: #fff;
+$palette-trueBlack: #000;
+$palette-lightGray: #a0a0a0;
+
+// カラーパレットの色を機能ごとの変数へ割り当て
+$color-hoverButton-background-gray: $palette-lightGray;
