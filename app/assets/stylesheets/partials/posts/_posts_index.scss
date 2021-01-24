@@ -9,11 +9,11 @@
 .posts {
   padding: 0 20px 35px;
   &__post {
-    border-bottom: 1pt silver solid;
+    border-bottom: 1pt $color-border-silver solid;
   }
 }
 .number1 {
-  border-top: 1pt silver solid;
+  border-top: 1pt $color-border-silver solid;
 }
 
 .info-box {
@@ -22,24 +22,24 @@
   justify-content: space-between;
   font-size: 14px;
   &__user {
-    color: #222;
+    color: $color-defaultText-black;
     text-decoration: none;
     cursor: pointer;
   }
   &__user:hover {
-    color: #a0a0a0;
+    color: $color-hoverText-gray;
   }
 }
 
 .post-text {
   padding-bottom: 12px;
   font-size: 20pt;
-  color: #222;
+  color: $color-defaultText-black;
   text-decoration: none;
   cursor: pointer;
 }
 .post-text:hover {
-  color: #a0a0a0;
+  color: $color-hoverText-gray;
 }
 
 .pagination {
