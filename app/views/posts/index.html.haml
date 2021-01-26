@@ -3,6 +3,14 @@
   .main
     .title-block
       %h1.title 投稿されたエビデンス一覧
+      .sort-area
+        = button_to 'posts', {method: :get, params: { sort: @sort }} do
+          - if @sort == "asc"
+            = icon('fa', 'sort-down')
+            新着順
+          - elsif @sort == "desc"
+            = icon('fa', 'sort-up')
+            古い順
     .posts
       -# 投稿内容を１レコードずつ展開
       - @posts.each_with_index do | post, i |
