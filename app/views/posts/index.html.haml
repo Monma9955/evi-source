@@ -3,7 +3,7 @@
   .main
     .title-block
       %h1.title 投稿されたエビデンス一覧
-      .sort-area
+      .sortBtn-area
         = button_to 'posts', {method: :get, params: { sort: @sort }} do
           - if @sort == "asc"
             = icon('fa', 'sort-down')
