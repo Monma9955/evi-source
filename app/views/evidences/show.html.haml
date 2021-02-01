@@ -6,48 +6,7 @@
       .evidence-scope
         = @post.text
     .evidences
-      - @post.evidences.each do | evidence |
-        .evidences__heading
-          = icon('fas', 'caret-square-down')
-          エビデンス
-          - if evidence.short_url.present?
-            = link_to "#{ evidence.short_url.url }", "#{ evidence.short_url.url }", target: '_blank'
-          - elsif evidence.it_is_url?
-            -# 何らかの理由で短縮URLが作成できなかった場合は元のURLを表示させる
-            = link_to "#{ evidence.source }", "#{ evidence.source }", target: '_blank'
-          - else
-            = evidence.source
-        %table.evidence-info
-          %tr.evidence-info__row
-            %td.evidence-info__row__title
-              情報提供元
-            %td.evidence-info__row__data
-              = evidence.informant
-          %tr.evidence-info__row
-            %td.evidence-info__row__title
-              情報更新日
-            %td.evidence-info__row__data
-              = l(evidence.source_updated_on, formats: :default)
-          %tr.evidence-info__row
-            %td.evidence-info__row__title
-              情報レベル
-            %td.evidence-info__row__data
-              = evidence.level_i18n
-          %tr.evidence-info__row
-            %td.evidence-info__row__title
-              私見か事実か
-            %td.evidence-info__row__data
-              = evidence.fact_or_opinion_i18n
-          %tr.evidence-info__row
-            %td.evidence-info__row__title
-              データタイプ
-            %td.evidence-info__row__data
-              = evidence.data_type_i18n
-          %tr.evidence-info__row
-            %td.evidence-info__row__title
-              備考
-            %td.evidence-info__row__data
-              = evidence.reference
+      = render partial: 'evidence', collection: @post.evidences, as: "evidence"
     .share
       = link_to "https://twitter.com/share?url=#{ request.url }&text=#{ @post.text } ／ 情報元はこちら", class: 'twitter-share-button', 'data-lang': "ja", 'data-size': "large", 'data-hashtags': "EviSource", target: '_blank' do
         %script{ async: "", src: "https://platform.twitter.com/widgets.js", charset: "utf-8" }
