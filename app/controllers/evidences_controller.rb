@@ -14,7 +14,7 @@ class EvidencesController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(evidences: :short_url).find(params[:id])
   end
 
   private
