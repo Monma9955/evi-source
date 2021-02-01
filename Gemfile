@@ -52,6 +52,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'bullet'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -67,6 +68,7 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
+  gem 'launchy'
   gem 'selenium-webdriver'
   gem 'webdrivers', '~> 4.0'
 end
@@ -76,6 +78,7 @@ gem "cocoon"
 gem "dotenv-rails"
 gem "enum_help"
 gem "factory_bot_rails"
+gem "faker"
 gem "font-awesome-sass"
 gem "haml-rails"
 gem "jquery-rails"

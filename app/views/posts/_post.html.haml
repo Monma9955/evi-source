@@ -1,0 +1,9 @@
+%div{ class: "posts__post number#{ post_counter + 1 }" }
+  .info-box
+    = link_to "ユーザー名", "#", class: "info-box__user"
+    %time.info-box__updated_at= l post.updated_at
+    .info-box__evidences エビデンス数 #{ post.evidences.count }
+    .info-box__level エビデンスレベル 1010101010
+  = link_to evidence_path(post.id), style: "all:initial" do
+    %p.post-text
+      = post.text
