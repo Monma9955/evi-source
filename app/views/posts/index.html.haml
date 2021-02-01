@@ -13,15 +13,6 @@
             古い順
     .posts
       -# 投稿内容を１レコードずつ展開
-      - @posts.each_with_index do | post, i |
-        %div{ class: "posts__post number#{ i + 1 }" }
-          .info-box
-            = link_to "ユーザー名", "#", class: "info-box__user"
-            %time.info-box__updated_at= l post.updated_at
-            .info-box__evidences エビデンス数 #{ post.evidences.count }
-            .info-box__level エビデンスレベル 1010101010
-          = link_to evidence_path(post.id), style: "all:initial" do
-            %p.post-text
-              = post.text
+      = render partial: 'post', collection: @posts, as: "post"
     -# ページネーション機能実装予定
     .pagination << 1 2 3 >>
