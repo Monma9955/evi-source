@@ -44,7 +44,7 @@ Twitterやその他SNS等では偽・誤情報が広まることも多く、コ�
 
 ## トップページ(兼エビデンス入力フォーム)イメージ画像
 
-<img width="774" alt="EviSource" src="https://user-images.githubusercontent.com/55307855/93936221-c6aaee00-fd60-11ea-984e-e03c0f3ebb0b.png">
+<img width="720" alt="EviSource" src="https://user-images.githubusercontent.com/55307855/107802930-4c2d4a00-6da5-11eb-9375-629db33d57bf.png">
 
 ## 開発環境
 
